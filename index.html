@@ -161,7 +161,6 @@ padding:72px 40px 0 40px;
 .card {
 max-width:400px;
 max-height:650px;
-position:relative;
 background:var(--cardBg);
 }
 
@@ -199,6 +198,10 @@ background:var(--bg);
 color:var(--secondaryTextColor);
 border:2px solid rgba(231,27,82,0.5);
 }
+
+textarea {
+resize:none;
+}
  
 #wave path{
 fill:var(--bg);
@@ -220,7 +223,7 @@ padding-bottom:5px;
 
 <a href="#" class="navbar-brand"><h4>Nafis Sadiq</h4></a>
 
-<button id="navBtn" class="navbar-toggler btn-nav" data-toggle="collapse"  data-target="#navbar" ><span id="togglerIcon" class="navbar-toggler-icon"></span></button>
+<button id="navBtn" class="navbar-toggler btn-nav" data-toggle="collapse"  data-target="#navbar" ><span id="togglerIcon" class="fas fa-bars"></span></button>
 
 <div id="navbar" class="collapse navbar-collapse" >
 <div id="marker" class="d-none d-sm-block"></div>
@@ -262,7 +265,7 @@ padding-bottom:5px;
 <h2 class="text-center">About</h2>
 <div class="underline"></div>
 <div class="row">
-<p class="lead col-sm-7">I'm Nafis Sadiq. I'm a student and I read in Class 10. I'm 17 years old. I'm learning web development. I've solved some projects too.</p>
+<p class="lead col-sm-7 my-auto">I'm Nafis Sadiq. I'm a student and I read in Class 10. I'm 17 years old. I'm learning web development. I've solved some projects too.</p>
 <svg class="col-sm-5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 <clipPath id="clip">
   <path fill="#FF0066" d="M48.5,-75.7C63,-66.1,75.1,-52.9,82.1,-37.5C89.1,-22.1,91,-4.3,87.6,11.8C84.1,28,75.1,42.7,64.2,56.3C53.4,69.8,40.6,82.4,25.3,87.5C10,92.6,-7.9,90.3,-25.1,85.4C-42.3,80.4,-58.7,72.7,-69.4,60.2C-80.1,47.7,-85.1,30.3,-86.2,13.3C-87.3,-3.8,-84.5,-20.6,-77.4,-35C-70.3,-49.5,-58.9,-61.7,-45.3,-71.6C-31.6,-81.6,-15.8,-89.3,0.6,-90.2C17,-91.1,34,-85.2,48.5,-75.7Z" transform="translate(100 100)" />
@@ -275,7 +278,7 @@ padding-bottom:5px;
 <div id="skills">
 <h4 class="text-center"><span><i class="fas fa-code"></i></span>Skills</h4>
 <div class="underline"></div>
-<div id="skillContainer" class="d-flex justify-content-center align-items-center flex-column flex-sm-row">
+<div id="skillContainer" class="d-flex justify-content-center align-items-center flex-column flex-sm-row no-gutters">
 <div class="skill col-sm-4">
 <p><span><i class="fab fa-html5" style="color:#e34c27"></i></span>HTML</p>
 <div class="progess bg-dark shadow-lg">
@@ -341,29 +344,29 @@ padding-bottom:5px;
 
 <!--Contact-->
 
-<div id="contact" class="my-5">
+<div id="contact" class="my-3">
 
 <h2 class="text-center">Contact</h2>
 <div class="underline"></div>
-<form >
+<form class="no-gutters d-flex align-items-center flex-column " >
 
-<div class="form-group">
+<div class="form-group col-sm-6">
 <label for="formName" >Name :</label>
 <input class="form-control shadow" type="text" placeholder="Name" id="formName">
 </div>
 
-<div class="form-group">
+<div class="form-group col-sm-6">
 <label for="formEmail" >Email :</label>
 <input class="form-control shadow" type="email" placeholder="Email address" id="formEmail">
 </div>
 
-<div class="form-group">
+<div class="form-group col-sm-6">
 <label for="message">Message :</label>
 <textarea class="form-control shadow" placeholder="Message" rows="3" id="message"></textarea>
 </div>
 </form>
 
-<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#openModal" >Submit</button>
+<button class="btn btn-block btn-primary col-sm-4 mx-auto" data-toggle="modal" data-target="#openModal" >Submit</button>
 
 <div class="modal fade" id="openModal">
 <div class="modal-dialog modal-dialog-centered">
@@ -420,12 +423,10 @@ function iconChanger(){
 var navShow=navbar.classList.contains("show");
 var navCollapse=navbar.classList.contains("collapsing");
 if (navShow==false && navCollapse==false){
-togglerIcon.className="";
-togglerIcon.innerHTML="&times";
+togglerIcon.className="fas fa-times";
 }
 else if(navShow==true && navCollapse==false){
-togglerIcon.className="navbar-toggler-icon";
-togglerIcon.innerHTML="";
+togglerIcon.className="fas fa-bars";
 }
 }
 navBtn.addEventListener("click",iconChanger);
