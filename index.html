@@ -481,7 +481,7 @@ document.documentElement.setAttribute("data-theme","dark");
 function themeChanger(){
 var myTheme=window.localStorage.getItem("theme");
 var html=document.documentElement;
-if (myTheme==="light"){
+if (myTheme==null || myTheme==="light"){
 html.setAttribute("data-theme","dark");
 localStorage.setItem("theme","dark");
 }
