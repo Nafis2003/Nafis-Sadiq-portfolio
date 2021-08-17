@@ -473,16 +473,21 @@ navLinks.forEach(navLink=>navLink.addEventListener("click", (e)=>{marker(e.targe
 
 //theme toggler
 var themeToggler=document.querySelector("#themeToggler");
-function themeChanger(){
-var html=document.documentElement;
-var myTheme=window.localStorage.getItem("data-theme");
-if (myTheme!=null && myTheme=="dark"){
-html.setAttribute("data-theme","light");
-localStorage.setItem("data-theme","light");
+var myTheme=window.localStorage.getItem("theme");
+if (myTheme==="dark"){
+document.documentElement.setAttribute("data-theme","dark");
 }
-else{
+
+function themeChanger(){
+var myTheme=window.localStorage.getItem("theme");
+var html=document.documentElement;
+if (myTheme==="light"){
 html.setAttribute("data-theme","dark");
-localStorage.setItem("data-theme","dark");
+localStorage.setItem("theme","dark");
+}
+else if (myTheme==="dark"){
+html.setAttribute("data-theme","light");
+localStorage.setItem("theme","light");
 }
 }
 
