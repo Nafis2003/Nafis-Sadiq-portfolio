@@ -471,19 +471,18 @@ indicator.style.width=e.offsetWidth+"px";
 }
 navLinks.forEach(navLink=>navLink.addEventListener("click", (e)=>{marker(e.target)}));
 
-
-//Theme toggler
+//theme toggler
 var themeToggler=document.querySelector("#themeToggler");
 function themeChanger(){
 var html=document.documentElement;
 var myTheme=window.localStorage.getItem("data-theme");
-if (myTheme=="light"){
-html.setAttribute("data-theme","dark");
-localStorage.setItem("data-theme","dark");
-}
-else{
+if (myTheme!=null && myTheme=="dark"){
 html.setAttribute("data-theme","light");
 localStorage.setItem("data-theme","light");
+}
+else{
+html.setAttribute("data-theme","dark");
+localStorage.setItem("data-theme","dark");
 }
 }
 
