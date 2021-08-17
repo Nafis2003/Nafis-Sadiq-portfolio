@@ -472,17 +472,18 @@ indicator.style.width=e.offsetWidth+"px";
 navLinks.forEach(navLink=>navLink.addEventListener("click", (e)=>{marker(e.target)}));
 
 
-//theme toggler
+//Theme toggler
 var themeToggler=document.querySelector("#themeToggler");
-
 function themeChanger(){
 var html=document.documentElement;
-if (html.dataset.theme=="light"){
+var myTheme=window.localStorage.getItem("data-theme");
+if (myTheme=="light"){
 html.setAttribute("data-theme","dark");
-
+localStorage.setItem("data-theme","dark");
 }
 else{
 html.setAttribute("data-theme","light");
+localStorage.setItem("data-theme","light");
 }
 }
 
