@@ -10,6 +10,7 @@ intro.style.height=height+"px";
 indicator.style.width="0";
 };
 
+alert ("This website is still in progress. Dark mode won't properly");
 
 window.onscroll=function (){
 var scrollVertical=window.scrollY;
